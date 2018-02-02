@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:padding="@dimen/size"
     android:orientation="vertical"
     tools:context="com.example.fcamacho.tarea1.MainActivity">
         <ScrollView
@@ -55,14 +55,14 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="@dimen/size"
                     android:text="@string/main_activity_hombre"/>
                 <RadioButton
                     android:id="@+id/main_activity_radio_mujer"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:paddingRight="10dp"
+                    android:paddingRight="@dimen/size"
                     android:checked="true"
                     android:text="@string/main_activity_mujer"/>
             </RadioGroup>

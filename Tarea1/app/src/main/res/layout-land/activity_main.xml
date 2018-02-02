@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context="com.example.fcamacho.tarea1.MainActivity">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/main_activity_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/main_activity_nombre_hint"
+                android:inputType="textPersonName"/>
+            <EditText
+                android:id="@+id/main_activity_telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/main_activity_telefono_hint"
+                android:inputType="phone"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_escolaridad"
+                android:textColor="@color/black"/>
+            <Spinner
+                android:id="@+id/main_activity_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/string_spinner"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_genero"
+                android:textColor="@color/black"/>
+            <RadioGroup
+                android:id="@+id/main_activity_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/main_activity_radio_hombre"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="@string/main_activity_hombre"/>
+                <RadioButton
+                    android:id="@+id/main_activity_radio_mujer"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:checked="true"
+                    android:text="@string/main_activity_mujer"/>
+            </RadioGroup>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_libro_favorito"
+                android:textColor="@color/black"/>
+            <AutoCompleteTextView
+                android:id="@+id/main_activity_autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/main_activity_libro_hint"/>
+            <CheckBox
+                android:id="@+id/main_activity_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_practica_deporte"
+                android:checked="true"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/main_activity_btn_limpiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/main_activity_limpiar"
+        android:onClick="resetAll"/>
+
+
+</LinearLayout>

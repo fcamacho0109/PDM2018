@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tarea1</string>
+    <string-array name="string_spinner">
+        <item>Bachillerato</item>
+        <item>Tecnico</item>
+        <item>Licenciatura</item>
+        <item>Maestria</item>
+        <item>Doctorado</item>
+    </string-array>
+    <string-array name="string_libros">
+        <item>Libro 1</item>
+        <item>Libro 2</item>
+        <item>Libro 3</item>
+        <item>Libro 4</item>
+        <item>Libro 5</item>
+    </string-array>
+    <string name="main_activity_nombre_hint">Ingrese nombre ...</string>
+    <string name="main_activity_telefono_hint">Ingrese telefono ...</string>
+    <string name="main_activity_escolaridad">Escolaridad</string>
+    <string name="main_activity_genero">Genero</string>
+    <string name="main_activity_hombre">Hombre</string>
+    <string name="main_activity_mujer">Mujer</string>
+    <string name="main_activity_libro_favorito">Libro favorito</string>
+    <string name="main_activity_libro_hint">Elegir libro ...</string>
+    <string name="main_activity_practica_deporte">Practica deporte</string>
+    <string name="main_activity_limpiar">Limpiar</string>
+    <string name="dialog_message">Desea borrar el contenido?</string>
+    <string name="dialog_title">Borrar!</string>
+    <string name="delete_content">Contenido borrado</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+</resources>

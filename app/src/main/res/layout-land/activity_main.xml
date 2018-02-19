@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.fcamacho.tarea2.ActivityMain">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_view_bici"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/bici_cafe"
+                android:alpha="1"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
+                />
+            <RelativeLayout
+                android:id="@+id/relative_layout_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimens_linearlayout_padding">
+                <TextView
+                    android:id="@+id/text_vintage_main"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_bicicleta"
+                    android:textSize="@dimen/dimens_titulo_bicicleta"
+                    />
+
+                <ImageButton
+                    android:id="@+id/like_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/text_vintage_main"
+                    android:layout_marginStart="30dp"
+                    android:layout_toEndOf="@+id/button_xlarge"
+                    android:adjustViewBounds="true"
+                    android:background="@color/white"
+                    android:onClick="likeCount"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/like" />
+                <TextView
+                    android:id="@+id/text_color"
+                    android:layout_below="@id/text_vintage_main"
+                    android:paddingTop="@dimen/dimens_color_padding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_color"
+                    android:textSize="@dimen/dimens_titulo_color"
+                    android:textColor="@color/black"
+                    />
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_below="@id/text_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/radio_button_grey"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/gray"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_brown"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:buttonTint="@color/brown"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_pink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/pink"/>
+                    <RadioButton
+                        android:id="@+id/radio_button_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/black"/>
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/button_small"
+                    android:layout_width="@dimen/dimens_button_w"
+                    android:layout_height="@dimen/dimens_button_h"
+                    android:layout_marginStart="10dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/radio_group"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/btn_border_background"
+                    android:text="@string/string_small"
+                    android:textColor="@color/colorPrimary"
+                    />
+
+                <Button
+                    android:id="@+id/button_medium"
+                    android:layout_width="@dimen/dimens_button_w"
+                    android:layout_height="@dimen/dimens_button_h"
+                    android:layout_below="@id/radio_group"
+                    android:layout_marginStart="@dimen/dimens_color_padding"
+                    android:layout_toEndOf="@+id/button_small"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/string_medium"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/btn_border_background"
+                    />
+
+                <Button
+                    android:id="@+id/button_large"
+                    android:layout_width="@dimen/dimens_button_w"
+                    android:layout_height="@dimen/dimens_button_h"
+                    android:layout_below="@id/radio_group"
+                    android:layout_marginStart="@dimen/dimens_color_padding"
+                    android:layout_toEndOf="@+id/button_medium"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/string_large"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/btn_border_background"
+                    />
+
+                <Button
+                    android:id="@+id/button_xlarge"
+                    android:layout_width="@dimen/dimens_button_w"
+                    android:layout_height="@dimen/dimens_button_h"
+                    android:layout_below="@id/radio_group"
+                    android:layout_marginStart="@dimen/dimens_color_padding"
+                    android:layout_toEndOf="@+id/button_large"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/string_xlarge"
+                    android:textColor="@color/colorPrimary"
+                    android:background="@drawable/btn_border_background"
+                    />
+                <TextView
+                    android:id="@+id/text_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/button_small"
+                    android:paddingTop="@dimen/dimens_color_padding"
+                    android:text="@string/string_description"
+                    android:textSize="@dimen/dimens_titulo_color"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:id="@+id/text_description_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_description"
+                    android:paddingTop="@dimen/dimens_color_padding"
+                    android:text="@string/string_loremipsum"
+                    />
+                <TextView
+                    android:id="@+id/text_mesurement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_description_text"
+                    android:paddingTop="@dimen/dimens_color_padding"
+                    android:text="@string/string_measurement"
+                    android:textSize="@dimen/dimens_titulo_color"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:id="@+id/text_mesurement_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_mesurement"
+                    android:paddingTop="@dimen/dimens_color_padding"
+                    android:text="@string/string_loremipsum"
+                    />
+
+                <Button
+                    android:id="@+id/car"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/text_mesurement_text"
+                    android:layout_marginTop="@dimen/dimens_button_w"
+                    android:layout_marginBottom="@dimen/dimens_button_w"
+                    android:text="@string/string_add_cart"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

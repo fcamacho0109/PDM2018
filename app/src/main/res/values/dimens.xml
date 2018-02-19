@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimens_titulo_bicicleta">25dp</dimen>
+    <dimen name="dimens_titulo_color">20dp</dimen>
+    <dimen name="dimens_linearlayout_padding">10dp</dimen>
+    <dimen name="dimens_color_padding">20dp</dimen>
+    <dimen name="dimens_button_w">40dp</dimen>
+    <dimen name="dimens_button_h">40dp</dimen>
+</resources>

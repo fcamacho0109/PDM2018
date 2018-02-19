@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Tarea2</string>
+    <string name="string_bicicleta">VINTAGE BICYCLE</string>
+    <string name="string_color">COLOR</string>
+    <string name="string_description">DESCRIPTION</string>
+    <string name="string_add_cart">ADD TO CART</string>
+    <string name="string_added_cart">ADDED TO CART</string>
+    <string name="string_measurement">MEASUREMENT</string>
+    <string name="string_small">S</string>
+    <string name="string_medium">M</string>
+    <string name="string_large">L</string>
+    <string name="string_xlarge">XL</string>
+    <string name="string_loremipsum">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Aenean commodo ligula eget dolor. Aenean massa.
+                                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                                    Nulla consequat massa quis enim.
+                                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                                    Nullam dictum felis eu pede mollis pretium. Integer tincidunt</string>
+
+</resources>

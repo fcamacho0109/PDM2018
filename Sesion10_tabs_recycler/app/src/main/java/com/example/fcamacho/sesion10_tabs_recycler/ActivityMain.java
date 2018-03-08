@@ -1,9 +1,9 @@
 package com.example.fcamacho.sesion10_tabs_recycler;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -22,23 +22,19 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fcamacho.sesion10_tabs_recycler.Adapters.AdapterProduct;
 import com.example.fcamacho.sesion10_tabs_recycler.beans.ItemProduct;
 
 import java.util.ArrayList;
-
-import static android.content.ContentValues.TAG;
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -111,57 +107,12 @@ public class ActivityMain extends AppCompatActivity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-
-            View rootView = inflater.inflate(R.layout.fragment_activity_main, container, false);
-
-            RecyclerView recyclerView = rootView.findViewById(R.id.fragment_recycler_view_main);
-            recyclerView.setHasFixedSize(true);
-            LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
-
-            Drawable mac = getResources().getDrawable(R.drawable.mac,null);
-            Drawable alien = getResources().getDrawable(R.drawable.alienware,null);
-            Drawable lanix = getResources().getDrawable(R.drawable.lanix,null);
-
-            recyclerView.setLayoutManager(mLayoutManager);
-            ArrayList<ItemProduct> products = new ArrayList<>();
-            products.add(new ItemProduct("Mac","BestBuy","Zapopan","3331112226",mac));
-            products.add(new ItemProduct("Alienware","DELL","Tlaquepaque","7778889994",alien));
-            products.add(new ItemProduct("Lanix","Saint Jhonny","Palomar","1478523690",lanix));
-            AdapterProduct adapterProduct = new AdapterProduct(products);
-            recyclerView.setAdapter(adapterProduct);
-            return rootView;
-        }
-    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
+
     public class SectionsPagerAdapter extends FragmentPagerAdapter { // numero de elementos del scroll tab
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -172,7 +123,19 @@ public class ActivityMain extends AppCompatActivity {
         public Fragment getItem(int position) { // aqui carga el fragmento de xml
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            /*switch (position){
+                case 0:
+                case 1:
+                case 2:
+                    if(fragmentTechnology == null) {
+                        fragmentTechnology = new FragmentTechnology();
+                    }
+                break;
+                default:
+                    return new FragmentTechnology();
+            }
+            return fragmentTechnology;*/
+            return new FragmentTechnology();
         }
 
         @Override
@@ -220,30 +183,15 @@ public class ActivityMain extends AppCompatActivity {
                 break;
         }
     }
-    public void dial(View view) {
 
-        switch (view.getId()) {
-            case R.id.item_product_phone:
-                requestPermissions();
-            break;
-        }
-    }
-    public void infoToast(View view){
-        switch (view.getId()) {
-            case R.id.card_view:
-                TextView title = findViewById(R.id.item_product_title);
-                TextView store = findViewById(R.id.item_product_store);
-                TextView location = findViewById(R.id.item_product_location);
-                TextView phone = findViewById(R.id.item_product_phone);
-                String info = "ItemProduct{\n" +
-                                            "title: "+title.getText().toString()+"\n" +
-                                            "store: "+store.getText().toString()+"\n" +
-                                            "location: "+location.getText().toString()+"\n" +
-                                            "phone: "+phone.getText().toString()+"\n" +
-                                            "image: "+title.getText().toString()+"\n"+
-                                            "}";
-                Toast.makeText(this,info.toString(), Toast.LENGTH_SHORT).show();
-                break;
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        FragmentTechnology fragmentTechnology = new FragmentTechnology();
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                fragmentTechnology.onActivityResult(requestCode,resultCode,data);
+            }
         }
     }
 }
